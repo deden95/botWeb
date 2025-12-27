@@ -12,19 +12,36 @@ pip install -r requirements.txt
 
 ## Cara Menggunakan
 
-### Basic Usage
+### Mode Interaktif (Recommended)
+Jalankan tanpa argument untuk masuk ke menu interaktif:
 ```bash
 python scrape_blog.py
 ```
 
-### Dengan Custom URL
-```bash
-python scrape_blog.py --url https://lanyardkilat.co.id/blog
-```
+Menu yang muncul:
+1. Scrape SEMUA halaman (tanpa limit)
+2. Scrape 10 posts per halaman (semua halaman)
+3. Scrape 20 posts per halaman (semua halaman)
+4. Scrape 50 posts per halaman (semua halaman)
+5. Scrape semua posts per halaman (tanpa limit posts)
+6. Custom (tentukan sendiri)
+0. Keluar
 
-### Dengan Limit Halaman
+Setelah scraping selesai, akan ditanya apakah ingin melanjutkan ke halaman berikutnya.
+
+### Mode Non-Interaktif (Command Line)
 ```bash
+# Scrape semua halaman
+python scrape_blog.py --all
+
+# Scrape dengan limit halaman
 python scrape_blog.py --max-pages 5
+
+# Scrape dengan limit posts per halaman
+python scrape_blog.py --posts-per-page 10
+
+# Kombinasi
+python scrape_blog.py --max-pages 5 --posts-per-page 10 --non-interactive
 ```
 
 ## Output
